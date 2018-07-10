@@ -1,0 +1,128 @@
+{
+  "resources": {
+    "Check": {
+      "client": "Check",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Checks",
+      "path": "checks",
+      "includes": ["checklists"],
+      "headers": ["Authorization"]
+    },
+    "Checklist": {
+      "client": "Checklist",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Checks",
+      "path": "checklists",
+      "includes": ["checks", "regulator"],
+      "headers": ["Authorization"]
+    },
+    "Company": {
+      "client": "Company",
+      "namespace": "Visacheck\\Visacheck\\Resources",
+      "path": "companies",
+      "includes": [],
+      "headers": ["Authorization"]
+    },
+    "Country": {
+      "client": "Country",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Common",
+      "path": "countries",
+      "includes": ["states"],
+      "headers": ["Authorization"]
+    },
+    "State": {
+      "client": "State",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Common",
+      "path": "states",
+      "includes": ["addresses", "country"],
+      "headers": ["Authorization"]
+    },
+    "User": {
+      "client": "User",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Users",
+      "path": "users",
+      "includes": ["company"],
+      "headers": ["Authorization"]
+    },
+    "Vehicle": {
+      "client": "Vehicle",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Vehicle",
+      "path": "vehicles",
+      "includes": ["address", "insurance", "managers", "owner", "vehicle_model", "vehicle_usages"],
+      "headers": ["Authorization"]
+    },
+    "VehicleMake": {
+      "client": "Make",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Vehicle",
+      "path": "vehicle-makes",
+      "includes": ["vehicle_models"],
+      "headers": ["Authorization"]
+    },
+    "VehicleModel": {
+      "client": "Model",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Vehicle",
+      "path": "vehicle-models",
+      "includes": ["vehicle_make", "vehicles", "vehicle_type"],
+      "headers": ["Authorization"]
+    },
+    "VehicleType": {
+      "client": "Type",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Vehicle",
+      "path": "vehicle-types",
+      "includes": ["vehicle_models"],
+      "headers": ["Authorization"]
+    },
+    "VehicleUsage": {
+      "client": "Usage",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Vehicle",
+      "path": "vehicle-usages",
+      "includes": ["vehicles", "regulator"],
+      "headers": ["Authorization"]
+    }
+  },
+  "services": {
+    "Company": {
+      "client": "Company",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "company",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
+    },
+    "GeoCode": {
+      "client": "GeoCode",
+      "namespace": "Visacheck\\Visacheck\\Identity",
+      "path": "geocode",
+      "parameters": {
+        "required": ["address1", "state"],
+        "optional": ["address2", "city"]
+      }
+    },
+    "PasswordLogin": {
+      "client": "PasswordLogin",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/token",
+      "parameters": {
+        "required": ["client_id", "client_secret", "grant_type", "username", "password", "scope"],
+        "optional": []
+      }
+    },
+    "Profile": {
+      "client": "Profile",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/me",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
+    },
+    "Registration": {
+      "client": "Registration",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/register",
+      "parameters": {
+        "required": ["client_id", "client_secret", "email", "password", "firstname", "lastname", "phone", "company"],
+        "optional": []
+      }
+    }
+  }
+}

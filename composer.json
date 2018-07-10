@@ -1,0 +1,32 @@
+{
+  "name": "visacheck/visacheck-sdk-php",
+  "homepage": "https://visacheck.co",
+  "description": "Visacheck SDK for PHP - Allows you to use the Visacheck API services in your web apps",
+  "keywords": ["visacheck","business","sdk"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Emmanuel Okeke",
+      "homepage": "https://github.com/emmanix2002"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^6.3",
+    "illuminate/support": "^5.5",
+    "moneyphp/money": "^3.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Visacheck\\Visacheck\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}
