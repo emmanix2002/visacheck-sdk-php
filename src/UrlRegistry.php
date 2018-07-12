@@ -9,8 +9,8 @@ class UrlRegistry
 {
     const ENVIRONMENTS = [
         'production' => 'https://visacheckapi.neon.ventures',
-        'staging' => 'http://api.visacheck.local',
-        'local' => 'http://api.visacheck.local'
+        'staging' => 'http://api.visacheck.local:8080',
+        'local' => 'http://api.visacheck.local:8080'
     ];
 
     /**
