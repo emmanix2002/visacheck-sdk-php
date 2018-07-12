@@ -100,7 +100,7 @@ function parse_query_parameters(string $queryString): array
 
 /**
  * Performs a login for using the provided details; if successful, it returns the "access_token"
- * (or DorcasResponse - depending on the value of the $returnToken parameter), else it will
+ * (or VisacheckResponse - depending on the value of the $returnToken parameter), else it will
  * return the actual response object.
  *
  * NOTE: The client_id, and client_secret must correspond to a Password Grant Client issued to you.
