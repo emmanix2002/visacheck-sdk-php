@@ -82,7 +82,16 @@
     "Company": {
       "client": "Company",
       "namespace": "Visacheck\\Visacheck\\Services\\Identity",
-      "path": "company",
+      "path": "auth/company",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
+    },
+    "ForgotPassword": {
+      "client": "ForgotPassword",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/forgot-password",
       "parameters": {
         "required": [],
         "optional": []
@@ -90,7 +99,7 @@
     },
     "GeoCode": {
       "client": "GeoCode",
-      "namespace": "Visacheck\\Visacheck\\Identity",
+      "namespace": "Visacheck\\Visacheck\\Services",
       "path": "geocode",
       "parameters": {
         "required": ["address1", "state"],
@@ -121,6 +130,15 @@
       "path": "auth/register",
       "parameters": {
         "required": ["client_id", "client_secret", "email", "password", "firstname", "lastname", "phone", "company"],
+        "optional": []
+      }
+    },
+    "ResetPassword": {
+      "client": "ResetPassword",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/reset-password",
+      "parameters": {
+        "required": [],
         "optional": []
       }
     }

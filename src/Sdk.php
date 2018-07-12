@@ -3,11 +3,11 @@
 namespace Visacheck\Visacheck;
 
 
-use Hostville\Dorcas\Exception\DorcasException;
-use Hostville\Dorcas\Exception\ResourceNotFoundException;
-use Hostville\Dorcas\Resources\ResourceInterface;
-use Hostville\Dorcas\Services\ServiceInterface;
 use GuzzleHttp\Client;
+use Visacheck\Visacheck\Exception\ResourceNotFoundException;
+use Visacheck\Visacheck\Exception\VisacheckException;
+use Visacheck\Visacheck\Resources\ResourceInterface;
+use Visacheck\Visacheck\Services\ServiceInterface;
 
 /**
  * The main SDK class for accessing the resources, and services on the Dorcas API.
@@ -26,9 +26,11 @@ use GuzzleHttp\Client;
  * @method \Visacheck\Visacheck\Resources\Vehicle\Usage                 createVehicleUsageResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Vehicle\Vehicle               createVehicleResource(string $id = null)
  * @method \Visacheck\Visacheck\Services\Identity\Company               createCompanyService()
+ * @method \Visacheck\Visacheck\Services\Identity\ForgotPassword        createForgotPasswordService()
  * @method \Visacheck\Visacheck\Services\Identity\PasswordLogin         createPasswordLoginService()
  * @method \Visacheck\Visacheck\Services\Identity\Profile               createProfileService()
  * @method \Visacheck\Visacheck\Services\Identity\Registration          createRegistrationService()
+ * @method \Visacheck\Visacheck\Services\Identity\ResetPassword         createResetPasswordService()
  * @method \Visacheck\Visacheck\Services\GeoCode                        createGeoCodeService()
  *
  */
@@ -169,15 +171,15 @@ class Sdk
     private function checkCredentials(array $args = []): bool
     {
         if (empty($args['credentials'])) {
-            throw new DorcasException('You did not provide the Visacheck client credentials in the configuration.', $args);
+            throw new VisacheckException('You did not provide the Visacheck client credentials in the configuration.', $args);
         }
         $id = data_get($args, 'credentials.id', null);
         $secret = data_get($args, 'credentials.secret', null);
         if (empty($id)) {
-            throw new DorcasException('The client "id" key is absent in the credentials configuration.', $args);
+            throw new VisacheckException('The client "id" key is absent in the credentials configuration.', $args);
         }
         if (empty($secret)) {
-            throw new DorcasException('The client "secret" key is absent in the credentials configuration.', $args);
+            throw new VisacheckException('The client "secret" key is absent in the credentials configuration.', $args);
         }
         return true;
     }
@@ -197,7 +199,7 @@ class Sdk
         if (empty($entry)) {
             throw new ResourceNotFoundException('Could not find the client for the requested resource '.$name);
         }
-        $resource = $entry['namespace'] . '\\' . $name;
+        $resource = $entry['namespace'] . '\\' . $entry['client'];
         return new $resource($this, ...$options);
     }
 
@@ -216,7 +218,7 @@ class Sdk
         if (empty($entry)) {
             throw new ResourceNotFoundException('Could not find the client for the requested service '.$name);
         }
-        $service = $entry['namespace'] . '\\' . $name;
+        $service = $entry['namespace'] . '\\' . $entry['client'];
         return new $service($this, $options);
     }
 

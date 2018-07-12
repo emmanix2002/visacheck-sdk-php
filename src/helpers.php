@@ -106,13 +106,14 @@ function parse_query_parameters(string $queryString): array
  * NOTE: The client_id, and client_secret must correspond to a Password Grant Client issued to you.
  *
  *
- * @param Sdk       $sdk
- * @param string    $username
- * @param string    $password
- * @param bool      $returnToken
+ * @param Sdk    $sdk
+ * @param string $username
+ * @param string $password
+ * @param bool   $returnToken
  *
  * @return VisacheckResponse|string
  * @throws \Visacheck\Visacheck\Exception\VisacheckException
+ * @throws \GuzzleHttp\Exception\GuzzleException
  */
 function login_via_password(Sdk $sdk, string $username, string $password, bool $returnToken = true)
 {
@@ -127,8 +128,8 @@ function login_via_password(Sdk $sdk, string $username, string $password, bool $
 /**
  * Creates a new Dorcas account with the provided details in the config array.
  *
- * @param Sdk       $sdk
- * @param array                 $config array containing the following keys:
+ * @param Sdk   $sdk
+ * @param array $config                 array containing the following keys:
  *                                      - email: the account email address
  *                                      - password: the desired plaintext account password
  *                                      - firstname: account holder's firstname
@@ -137,6 +138,7 @@ function login_via_password(Sdk $sdk, string $username, string $password, bool $
  *                                      - company: account holder's company name
  *
  * @return VisacheckResponse
+ * @throws \GuzzleHttp\Exception\GuzzleException
  */
 function create_account(Sdk $sdk, array $config): VisacheckResponse
 {
