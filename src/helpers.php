@@ -167,9 +167,9 @@ function get_validation_errors_from_response(VisacheckResponse $response): array
     if (empty($response->getErrors())) {
         return [];
     }
-    $errors = collecT($response->getErrors());
+    $errors = collect($response->getErrors());
     # get the errors as a collection
-    $validationErrors = $errors->where('name', 'validation_error')->first();
+    $validationErrors = $errors->where('code', 'validation_error')->first();
     # get the validation errors entry
     if (empty($validationErrors)) {
         return [];
