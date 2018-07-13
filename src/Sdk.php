@@ -31,6 +31,7 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Services\Identity\Profile               createProfileService()
  * @method \Visacheck\Visacheck\Services\Identity\Registration          createRegistrationService()
  * @method \Visacheck\Visacheck\Services\Identity\ResetPassword         createResetPasswordService()
+ * @method \Visacheck\Visacheck\Services\Identity\VerifyAccount         createVerifyAccountService()
  * @method \Visacheck\Visacheck\Services\GeoCode                        createGeoCodeService()
  *
  */
