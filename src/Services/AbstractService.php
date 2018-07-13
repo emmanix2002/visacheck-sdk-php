@@ -74,9 +74,7 @@ abstract class AbstractService implements ServiceInterface
             return $this;
         }
         if (!is_array($value) && !is_scalar($value)) {
-            throw new \InvalidArgumentException(
-                'The value for a query parameter should either be a scalar type (int, string, float), or an array.'
-            );
+            $value = '';
         }
         $this->query[$name] = $value;
         return $this;
