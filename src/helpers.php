@@ -154,3 +154,29 @@ function create_account(Sdk $sdk, array $config, array $headers = null): Visache
     }
     return $service->send('post');
 }
+
+/**
+ * Returns the validation errors from the response, if any.
+ *
+ * @param VisacheckResponse $response
+ *
+ * @return array
+ */
+function get_validation_errors_from_response(VisacheckResponse $response): array
+{
+    if (empty($response->getErrors())) {
+        return [];
+    }
+    $errors = collecT($response->getErrors());
+    # get the errors as a collection
+    $validationErrors = $errors->where('name', 'validation_error')->first();
+    # get the validation errors entry
+    if (empty($validationErrors)) {
+        return [];
+    }
+    $messages = [];
+    foreach ($validationErrors['source'] as $field => $failures) {
+        $messages[$field] = $failures;
+    }
+    return $messages;
+}
