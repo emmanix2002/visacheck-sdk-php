@@ -115,6 +115,7 @@ class SdkTest extends TestCase
             ['Profile', \Visacheck\Visacheck\Services\Identity\Profile::class],
             ['Registration', \Visacheck\Visacheck\Services\Identity\Registration::class],
             ['ResetPassword', \Visacheck\Visacheck\Services\Identity\ResetPassword::class],
+            ['VerifyAccount', \Visacheck\Visacheck\Services\Identity\VerifyAccount::class],
         ];
     }
 }

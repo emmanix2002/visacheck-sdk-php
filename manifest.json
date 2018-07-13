@@ -141,6 +141,15 @@
         "required": [],
         "optional": []
       }
+    },
+    "VerifyAccount": {
+      "client": "VerifyAccount",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/verify-account",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
     }
   }
 }
