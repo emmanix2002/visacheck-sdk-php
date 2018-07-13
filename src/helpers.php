@@ -128,23 +128,29 @@ function login_via_password(Sdk $sdk, string $username, string $password, bool $
 /**
  * Creates a new Dorcas account with the provided details in the config array.
  *
- * @param Sdk   $sdk
- * @param array $config                 array containing the following keys:
+ * @param Sdk        $sdk
+ * @param array      $config            array containing the following keys:
  *                                      - email: the account email address
  *                                      - password: the desired plaintext account password
  *                                      - firstname: account holder's firstname
  *                                      - lastname: account holder's lastname
  *                                      - phone: account holder's contact phone number
  *                                      - company: account holder's company name
+ * @param array|null $headers
  *
  * @return VisacheckResponse
  * @throws \GuzzleHttp\Exception\GuzzleException
  */
-function create_account(Sdk $sdk, array $config): VisacheckResponse
+function create_account(Sdk $sdk, array $config, array $headers = null): VisacheckResponse
 {
     $service = $sdk->createRegistrationService();
     foreach ($config as $key => $value) {
         $service = $service->addBodyParam($key, $value);
+    }
+    if (!empty($headers)) {
+        foreach ($headers as $name => $value) {
+            $service = $service->addHeader($name, $value);
+        }
     }
     return $service->send('post');
 }
