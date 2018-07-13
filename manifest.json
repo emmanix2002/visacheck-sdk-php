@@ -129,7 +129,7 @@
       "namespace": "Visacheck\\Visacheck\\Services\\Identity",
       "path": "auth/register",
       "parameters": {
-        "required": ["client_id", "client_secret", "email", "password", "firstname", "lastname", "phone", "company"],
+        "required": ["client_id", "client_secret", "email", "firstname", "lastname"],
         "optional": []
       }
     },
