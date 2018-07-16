@@ -28,6 +28,27 @@
       "includes": ["states"],
       "headers": ["Authorization"]
     },
+    "Role": {
+      "client": "Role",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Common",
+      "path": "roles",
+      "includes": ["permissions"],
+      "headers": ["Authorization"]
+    },
+    "Service": {
+      "client": "Service",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Services",
+      "path": "services",
+      "includes": ["parent", "providers", "service_type", "regulator"],
+      "headers": ["Authorization"]
+    },
+    "ServiceType": {
+      "client": "ServiceType",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Services",
+      "path": "service-types",
+      "includes": ["services"],
+      "headers": ["Authorization"]
+    },
     "State": {
       "client": "State",
       "namespace": "Visacheck\\Visacheck\\Resources\\Common",
@@ -146,6 +167,15 @@
       "client": "VerifyAccount",
       "namespace": "Visacheck\\Visacheck\\Services\\Identity",
       "path": "auth/verify-account",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
+    },
+    "ViewConfiguration": {
+      "client": "ViewConfiguration",
+      "namespace": "Visacheck\\Visacheck\\Services",
+      "path": "view-configuration",
       "parameters": {
         "required": [],
         "optional": []

@@ -85,6 +85,9 @@ class SdkTest extends TestCase
             ['Checklist', \Visacheck\Visacheck\Resources\Checks\Checklist::class],
             ['Company', \Visacheck\Visacheck\Resources\Company::class],
             ['Country', \Visacheck\Visacheck\Resources\Common\Country::class],
+            ['Role', \Visacheck\Visacheck\Resources\Common\Role::class],
+            ['Service', \Visacheck\Visacheck\Resources\Services\Service::class],
+            ['ServiceType', \Visacheck\Visacheck\Resources\Services\ServiceType::class],
             ['State', \Visacheck\Visacheck\Resources\Common\State::class],
             ['User', \Visacheck\Visacheck\Resources\Users\User::class],
             ['Vehicle', \Visacheck\Visacheck\Resources\Vehicle\Vehicle::class],
@@ -116,6 +119,7 @@ class SdkTest extends TestCase
             ['Registration', \Visacheck\Visacheck\Services\Identity\Registration::class],
             ['ResetPassword', \Visacheck\Visacheck\Services\Identity\ResetPassword::class],
             ['VerifyAccount', \Visacheck\Visacheck\Services\Identity\VerifyAccount::class],
+            ['ViewConfiguration', \Visacheck\Visacheck\Services\ViewConfiguration::class],
         ];
     }
 }

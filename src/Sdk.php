@@ -18,6 +18,9 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Resources\Checks\Checklist              createChecklistResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Company                       createCompanyResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Common\Country                createCountryResource(string $id = null)
+ * @method \Visacheck\Visacheck\Resources\Common\Role                   createRoleResource(string $id = null)
+ * @method \Visacheck\Visacheck\Resources\Services\Service              createServiceResource(string $id = null)
+ * @method \Visacheck\Visacheck\Resources\Services\ServiceType          createServiceTypeResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Common\State                  createStateResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Users\User                    createUserResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Vehicle\Make                  createVehicleMakeResource(string $id = null)
@@ -33,6 +36,7 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Services\Identity\ResetPassword         createResetPasswordService()
  * @method \Visacheck\Visacheck\Services\Identity\VerifyAccount         createVerifyAccountService()
  * @method \Visacheck\Visacheck\Services\GeoCode                        createGeoCodeService()
+ * @method \Visacheck\Visacheck\Services\ViewConfiguration              createViewConfigurationService()
  *
  */
 class Sdk
