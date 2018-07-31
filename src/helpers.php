@@ -126,6 +126,29 @@ function login_via_password(Sdk $sdk, string $username, string $password, bool $
 }
 
 /**
+ * Performs a login for using the provided details; if successful, it returns the "access_token"
+ * (or DorcasResponse - depending on the value of the $returnToken parameter), else it will
+ * return the actual response object.
+ *
+ * @param Sdk   $sdk
+ * @param array $credentials
+ * @param bool  $returnToken
+ *
+ * @return VisacheckResponse
+ * @throws \GuzzleHttp\Exception\GuzzleException
+ */
+function authorize_via_email_only(Sdk $sdk, array $credentials, bool $returnToken = true)
+{
+    $service = $sdk->createAuthorizationService();
+    foreach ($credentials as $key => $value) {
+        $service = $service->addBodyParam($key, $value);
+    }
+    $response = $service->send('post', ['email']);
+    # sends a HTTP POST request with the parameters
+    return $response->isSuccessful() && $returnToken ? $response->getData()['access_token'] : $response;
+}
+
+/**
  * Creates a new Dorcas account with the provided details in the config array.
  *
  * @param Sdk        $sdk

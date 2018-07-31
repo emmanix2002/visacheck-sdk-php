@@ -85,6 +85,7 @@ class SdkTest extends TestCase
             ['Checklist', \Visacheck\Visacheck\Resources\Checks\Checklist::class],
             ['Company', \Visacheck\Visacheck\Resources\Company::class],
             ['Country', \Visacheck\Visacheck\Resources\Common\Country::class],
+            ['InsurancePolicy', \Visacheck\Visacheck\Resources\Insurance\Policy::class],
             ['Role', \Visacheck\Visacheck\Resources\Common\Role::class],
             ['Service', \Visacheck\Visacheck\Resources\Services\Service::class],
             ['ServiceType', \Visacheck\Visacheck\Resources\Services\ServiceType::class],
@@ -111,6 +112,7 @@ class SdkTest extends TestCase
     public function serviceProvider()
     {
         return [
+            ['Authorization', \Visacheck\Visacheck\Services\Identity\Authorization::class],
             ['Company', \Visacheck\Visacheck\Services\Identity\Company::class],
             ['ForgotPassword', \Visacheck\Visacheck\Services\Identity\ForgotPassword::class],
             ['GeoCode', \Visacheck\Visacheck\Services\GeoCode::class],

@@ -28,6 +28,13 @@
       "includes": ["states"],
       "headers": ["Authorization"]
     },
+    "InsurancePolicy": {
+      "client": "Policy",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Insurance",
+      "path": "insurance-policies",
+      "includes": ["vehicles"],
+      "headers": ["Authorization"]
+    },
     "Role": {
       "client": "Role",
       "namespace": "Visacheck\\Visacheck\\Resources\\Common",
@@ -100,6 +107,15 @@
     }
   },
   "services": {
+    "Authorization": {
+      "client": "Authorization",
+      "namespace": "Visacheck\\Visacheck\\Services\\Identity",
+      "path": "auth/authorize",
+      "parameters": {
+        "required": ["client_id", "client_secret", "email"],
+        "optional": []
+      }
+    },
     "Company": {
       "client": "Company",
       "namespace": "Visacheck\\Visacheck\\Services\\Identity",
