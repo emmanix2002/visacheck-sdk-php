@@ -86,13 +86,13 @@ trait SendsHttpRequestTrait
     
     /**
      * @param array  $container
-     * @param string $name
+     * @param mixed $name
      * @param        $value
      * @param bool   $overwrite
      *
      * @return $this
      */
-    private function addEntryToPayload(array &$container, string $name, $value, bool $overwrite = false)
+    private function addEntryToPayload(array &$container, $name, $value, bool $overwrite = false)
     {
         $keyExists = array_key_exists($name, $container);
         # check if the key already exists
@@ -118,12 +118,12 @@ trait SendsHttpRequestTrait
      * Adds an entry to the request header.
      *
      * @param string $name
-     * @param string $value
+     * @param mixed $value
      * @param bool   $overwrite
      *
      * @return SendsHttpRequestTrait
      */
-    public function addHeader(string $name, string $value, bool $overwrite = false)
+    public function addHeader(string $name, $value, bool $overwrite = false)
     {
         return $this->addEntryToPayload($this->headers, $name, $value, $overwrite);
     }
