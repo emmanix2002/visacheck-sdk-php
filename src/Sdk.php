@@ -18,6 +18,7 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Resources\Checks\Checklist              createChecklistResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Company                       createCompanyResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Common\Country                createCountryResource(string $id = null)
+ * @method \Visacheck\Visacheck\Resources\Common\Invite                 createInviteResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Insurance\Policy              createInsurancePolicyResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Common\Role                   createRoleResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Services\Service              createServiceResource(string $id = null)

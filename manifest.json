@@ -35,6 +35,13 @@
       "includes": ["vehicles"],
       "headers": ["Authorization"]
     },
+    "Invite": {
+      "client": "Invite",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Common",
+      "path": "invites",
+      "includes": [],
+      "headers": []
+    },
     "Role": {
       "client": "Role",
       "namespace": "Visacheck\\Visacheck\\Resources\\Common",
