@@ -14,6 +14,13 @@
       "includes": ["checks", "regulator"],
       "headers": ["Authorization"]
     },
+    "CheckSection": {
+      "client": "CheckSection",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Checks",
+      "path": "check-sections",
+      "includes": ["checks"],
+      "headers": ["Authorization"]
+    },
     "Company": {
       "client": "Company",
       "namespace": "Visacheck\\Visacheck\\Resources",
