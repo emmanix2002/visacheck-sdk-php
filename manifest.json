@@ -35,6 +35,13 @@
       "includes": ["states"],
       "headers": ["Authorization"]
     },
+    "Inspection": {
+      "client": "Inspection",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Services",
+      "path": "inspections",
+      "includes": ["checklist", "inspector"],
+      "headers": ["Authorization"]
+    },
     "InsurancePolicy": {
       "client": "Policy",
       "namespace": "Visacheck\\Visacheck\\Resources\\Insurance",

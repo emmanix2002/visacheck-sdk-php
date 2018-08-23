@@ -86,6 +86,7 @@ class SdkTest extends TestCase
             ['CheckSection', \Visacheck\Visacheck\Resources\Checks\CheckSection::class],
             ['Company', \Visacheck\Visacheck\Resources\Company::class],
             ['Country', \Visacheck\Visacheck\Resources\Common\Country::class],
+            ['Inspection', \Visacheck\Visacheck\Resources\Services\Inspection::class],
             ['InsurancePolicy', \Visacheck\Visacheck\Resources\Insurance\Policy::class],
             ['Invite', \Visacheck\Visacheck\Resources\Common\Invite::class],
             ['Role', \Visacheck\Visacheck\Resources\Common\Role::class],
