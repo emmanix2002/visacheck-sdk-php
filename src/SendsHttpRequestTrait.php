@@ -157,11 +157,25 @@ trait SendsHttpRequestTrait
         if (array_key_exists($name, $this->multipart) && !$overwrite) {
             return $this;
         }
-        $part = ['name' => $name, 'contents' => $content];
-        if (!empty($filename)) {
-            $part['filename'] = $filename;
+        if (!is_array($content)) {
+            # not array content
+            $part = ['name' => $name, 'contents' => $content];
+            if (!empty($filename)) {
+                $part['filename'] = $filename;
+            }
+            $this->multipart[] = $part;
+        } else {
+            # we have some array data
+            $index = 0;
+            foreach ($content as $c) {
+                $part = ['name' => $name . '[' . $index . ']', 'contents' => $c];
+                if (!empty($filename)) {
+                    $part['filename'] = $filename;
+                }
+                $this->multipart[] = $part;
+                ++$index;
+            }
         }
-        $this->multipart[] = $part;
         return $this;
     }
 
