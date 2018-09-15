@@ -224,7 +224,11 @@ trait SendsHttpRequestTrait
                     # check if we have some multipart data first
                     foreach ($this->body as $key => $value) {
                         # add the requested body params to the multipart data
-                        $this->multipart[] = ['name' => $key, 'contents' => $value, 'headers' => ['content-type' => 'application/x-www-form-urlencoded']];
+                        $this->multipart[] = [
+                            'name' => $key,
+                            'contents' => $value,
+                            'headers' => ['content-type' => 'application/x-www-form-urlencoded']
+                        ];
                     }
                     $options[RequestOptions::MULTIPART] = $this->multipart;
 
