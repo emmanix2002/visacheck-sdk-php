@@ -227,18 +227,20 @@ trait SendsHttpRequestTrait
                         if (!is_array($value)) {
                             $this->multipart[] = ['name' => $key, 'contents' => $value];
                         } else {
-                            foreach ($value as $innerKey => $innerValue) {
+                            /*foreach ($value as $innerKey => $innerValue) {
                                 $this->multipart[] = ['name' => $key . '[' . $innerKey . ']', 'contents' => $innerValue];
-                            }
+                            }*/
+                            $this->multipart[] = [
+                                'name' => $key,
+                                'contents' => http_build_query($value),
+                                'headers' => ['content-type' => 'application/x-www-form-urlencoded']
+                            ];
                         }
+                        
                         /*
                          * This should work, but for some reason, it doesn't.
                          *
-                         * $this->multipart[] = [
-                             'name' => $key,
-                             'contents' => $value,
-                             'headers' => ['content-type' => 'application/x-www-form-urlencoded']
-                           ];
+                         *
                         */
                     }
                     $options[RequestOptions::MULTIPART] = $this->multipart;
