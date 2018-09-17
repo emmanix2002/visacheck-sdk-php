@@ -81,6 +81,7 @@ class SdkTest extends TestCase
     public function resourceProvider()
     {
         return [
+            ['Booking', \Visacheck\Visacheck\Resources\Services\Booking::class],
             ['Check', \Visacheck\Visacheck\Resources\Checks\Check::class],
             ['Checklist', \Visacheck\Visacheck\Resources\Checks\Checklist::class],
             ['CheckSection', \Visacheck\Visacheck\Resources\Checks\CheckSection::class],

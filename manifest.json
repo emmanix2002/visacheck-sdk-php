@@ -1,5 +1,12 @@
 {
   "resources": {
+    "Booking": {
+      "client": "Booking",
+      "namespace": "Visacheck\\Visacheck\\Resources\\Services",
+      "path": "bookings",
+      "includes": ["address", "batch", "inspection", "provider", "vehicle"],
+      "headers": ["Authorization"]
+    },
     "Check": {
       "client": "Check",
       "namespace": "Visacheck\\Visacheck\\Resources\\Checks",

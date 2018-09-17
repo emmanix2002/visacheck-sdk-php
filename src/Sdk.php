@@ -22,6 +22,7 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Resources\Common\Invite                 createInviteResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Insurance\Policy              createInsurancePolicyResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Common\Role                   createRoleResource(string $id = null)
+ * @method \Visacheck\Visacheck\Resources\Services\Booking              createBookingResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Services\Inspection           createInspectionResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Services\Service              createServiceResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Services\ServiceType          createServiceTypeResource(string $id = null)
