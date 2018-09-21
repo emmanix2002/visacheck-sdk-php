@@ -118,6 +118,7 @@ class SdkTest extends TestCase
         return [
             ['Authorization', \Visacheck\Visacheck\Services\Identity\Authorization::class],
             ['Company', \Visacheck\Visacheck\Services\Identity\Company::class],
+            ['Dashboard', \Visacheck\Visacheck\Services\Dashboard::class],
             ['ForgotPassword', \Visacheck\Visacheck\Services\Identity\ForgotPassword::class],
             ['GeoCode', \Visacheck\Visacheck\Services\GeoCode::class],
             ['PasswordLogin', \Visacheck\Visacheck\Services\Identity\PasswordLogin::class],

@@ -153,6 +153,15 @@
         "optional": []
       }
     },
+    "Dashboard": {
+      "client": "Dashboard",
+      "namespace": "Visacheck\\Visacheck\\Services",
+      "path": "dashboard",
+      "parameters": {
+        "required": [],
+        "optional": []
+      }
+    },
     "ForgotPassword": {
       "client": "ForgotPassword",
       "namespace": "Visacheck\\Visacheck\\Services\\Identity",

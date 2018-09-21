@@ -33,6 +33,7 @@ use Visacheck\Visacheck\Services\ServiceInterface;
  * @method \Visacheck\Visacheck\Resources\Vehicle\Type                  createVehicleTypeResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Vehicle\Usage                 createVehicleUsageResource(string $id = null)
  * @method \Visacheck\Visacheck\Resources\Vehicle\Vehicle               createVehicleResource(string $id = null)
+ * @method \Visacheck\Visacheck\Services\Dashboard                      createDashboardService()
  * @method \Visacheck\Visacheck\Services\Identity\Authorization         createAuthorizationService()
  * @method \Visacheck\Visacheck\Services\Identity\Company               createCompanyService()
  * @method \Visacheck\Visacheck\Services\Identity\ForgotPassword        createForgotPasswordService()
