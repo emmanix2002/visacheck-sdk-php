@@ -8,15 +8,15 @@ use GuzzleHttp\Psr7\Uri;
 class UrlRegistry
 {
     const ENVIRONMENTS = [
-        'production' => 'https://visacheckapi.neon.ventures',
-        'staging' => 'http://api.visacheck.local:8080',
+        'production' => 'https://api.visacheck.co',
+        'staging' => 'http://stagingapi.visacheck.co',
         'local' => 'http://api.visacheck.local:8080'
     ];
 
     /**
      * @var string
      */
-    private $environment = 'staging';
+    private $environment;
 
     /**
      * @var Uri
@@ -32,7 +32,7 @@ class UrlRegistry
     {
         $envs = array_keys(self::ENVIRONMENTS);
         # get the available environment
-        $this->environment = !in_array(strtolower($env), $envs) ? 'staging' : strtolower($env);
+        $this->environment = !in_array(strtolower($env), $envs, true) ? 'staging' : strtolower($env);
         $base = self::ENVIRONMENTS[$this->environment];
         $this->uri = new Uri($base);
     }
